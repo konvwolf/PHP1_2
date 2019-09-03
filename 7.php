@@ -9,7 +9,7 @@ $minutes = date ('i');
 
 
 /**
- * Функция specifyHEnding определяет окончание для часов
+ * Функция specifyHrEnding определяет окончание для часов
  */
 function specifyHrEnding ($arg) {
     switch (true) {
@@ -27,7 +27,7 @@ function specifyHrEnding ($arg) {
 }
 
 /**
- * Функция specifyMEnding определяет окончание для минут
+ * Функция specifyMinEnding определяет окончание для минут
  */
 function specifyMinEnding ($arg) {
     switch (true) {
@@ -37,10 +37,6 @@ function specifyMinEnding ($arg) {
 
         case $arg[1] >= 2 && $arg[1] <= 4 && $arg[0] != 1:
             return 'ы';
-            break;
-
-        case $arg[1] >= 1 && $arg[1] <= 9 && $arg[0] == 1 || $arg[1] == 0:
-            return '';
             break;
 
         default:
