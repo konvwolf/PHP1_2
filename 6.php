@@ -4,7 +4,16 @@
 Формат: function power($val, $pow), где $val – заданное число, $pow – степень */
 
 $val = 2;
-$pow = 10;
+$pow = -10;
+
+
+/**
+ * Функция checkSign определяет знак числа. 0 считает положительным числом. Если
+ * число положительное или равно 0, функция возвращает 1, если отрицательное - -1
+ */
+function checkSign ($arg) {
+    return ($arg > 0) ? 1 : -1;
+}
 
 
 /**
@@ -14,10 +23,16 @@ $pow = 10;
  * равным 0, выводится результат
  */
 function power ($val, $pow) {
-    if ($pow !== 0) {
+    $sign = checkSign ($pow);
+    if ($val == 0) {
+        return 0;
+    } elseif ($sign == 1 && $pow > 0) {
         return $val * power ($val, $pow - 1);
-    }
-    return 1;
+    } elseif ($sign == -1 && $pow < 0) {
+        return 1 / $val * power ($val, $pow + 1);
+    } else {
+        return 1;
+    }    
 }
 
 echo power ($val, $pow);

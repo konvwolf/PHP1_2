@@ -29,7 +29,7 @@ function specifyHrEnding ($arg) {
 /**
  * Функция specifyMinEnding определяет окончание для минут
  */
-function specifyMinEnding ($arg) {
+function specifyMinEnding (int $arg) {
     switch (true) {
         case $arg[1] == 1:
             return 'а';

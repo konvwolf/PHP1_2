@@ -4,7 +4,7 @@
 параметрами. Обязательно использовать оператор return */
 
 $a = 2;
-$b = 2;
+$b = 4;
 
 function summ ($arg1, $arg2) { // функция суммирования
     return $arg1 + $arg2;
@@ -19,7 +19,7 @@ function multiply ($arg1, $arg2) { // функция умножения
 }
 
 function divide ($arg1, $arg2) { // функция деления
-    return $arg1 / $arg2;
+    return ($arg2 == 0) ? 'ERR' : $arg1 / $arg2;
 }
 
 echo summ ($a, $b).PHP_EOL;
